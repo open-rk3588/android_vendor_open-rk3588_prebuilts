@@ -1,0 +1,8 @@
+/vendor/lib(64)?/dri_gbm\.so u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/egl/libEGL_mesa\.so u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/egl/libGLESv1_CM_mesa\.so u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/egl/libGLESv2_mesa\.so u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libglapi\.so u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libgbm_mesa\.so u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libgallium_dri\.so u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vulkan\.panfrost\.so u:object_r:same_process_hal_file:s0

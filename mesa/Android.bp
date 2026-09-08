@@ -1,0 +1,144 @@
+
+cc_prebuilt_library_shared {
+    name: "libgbm_mesa",
+    arch: {
+        arm: {
+            srcs: ["lib32/libgbm_mesa.so"],
+        },
+        arm64: {
+            srcs: ["lib64/libgbm_mesa.so"],
+        },
+    },
+    compile_multilib: "both",
+    strip: {
+        none: true,
+    },
+    shared_libs: [
+	"dri_gbm",
+        "libcutils",
+        "libdrm",
+        "libdl",
+        "libc",
+    ],
+//    check_elf_files: false,
+    vendor: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "dri_gbm",
+    arch: {
+        arm64: {
+            srcs: ["lib64/dri_gbm.so"],
+        },
+        arm: {
+            srcs: ["lib32/dri_gbm.so"],
+        },
+    },
+    compile_multilib: "both",
+    strip: {
+        none: true,
+    },
+    shared_libs: ["libc", "libdl", "liblog", "libm", "libdrm", "libgallium_dri"],
+//    check_elf_files: false,
+    vendor: true
+}
+
+cc_prebuilt_library_shared {
+    name: "libgallium_dri",
+    relative_install_path: "egl",
+    arch: {
+        arm64: {
+            srcs: ["lib64/libgallium_dri.so"],
+        },
+        arm: {
+            srcs: ["lib32/libgallium_dri.so"],
+        },
+    },
+    compile_multilib: "both",
+    strip: {
+        none: true,
+    },
+    shared_libs: ["libc", "libdl", "liblog", "libm", "libdrm", "liblog", "libsync", "libz"],
+//    check_elf_files: false,
+    vendor: true
+}
+
+cc_prebuilt_library_shared {
+    name: "libEGL_mesa",
+    arch: {
+        arm64: {
+            srcs: ["lib64/libEGL.so"],
+        },
+        arm: {
+            srcs: ["lib32/libEGL.so"],
+        },
+    },
+    compile_multilib: "both",
+    strip: {
+        none: true,
+    },
+    relative_install_path: "egl",
+    shared_libs: ["libc", "libdl", "liblog", "libm", "libcutils", "libdrm", "libgallium_dri", "libhardware", "liblog", "libnativewindow", "libsync"],
+//    check_elf_files: false,
+    vendor: true
+}
+
+cc_prebuilt_library_shared {
+    name: "libGLESv1_CM_mesa",
+    relative_install_path: "egl",
+    arch: {
+        arm64: {
+            srcs: ["lib64/libGLESv1_CM.so"],
+        },
+        arm: {
+            srcs: ["lib32/libGLESv1_CM.so"],
+        },
+    },
+    compile_multilib: "both",
+    strip: {
+        none: true,
+    },
+    shared_libs: ["libc", "libdl", "liblog", "libm", "libgallium_dri"],
+//    check_elf_files: false,
+    vendor: true
+}
+
+cc_prebuilt_library_shared {
+    name: "libGLESv2_mesa",
+    relative_install_path: "egl",
+    arch: {
+        arm64: {
+            srcs: ["lib64/libGLESv2.so"],
+        },
+        arm: {
+            srcs: ["lib64/libGLESv2.so"],
+        },
+    },
+    compile_multilib: "both",
+    strip: {
+        none: true,
+    },
+    shared_libs: ["libc", "libdl", "liblog", "libm", "libgallium_dri"],
+//    check_elf_files: false,
+    vendor: true
+}
+
+cc_prebuilt_library_shared {
+    name: "vulkan.panfrost",
+    relative_install_path: "hw",
+    arch: {
+        arm64: {
+            srcs: ["lib64/libvulkan_panfrost.so"],
+        },
+        arm: {
+            srcs: ["lib32/libvulkan_panfrost.so"],
+        },
+    },
+    compile_multilib: "both",
+    strip: {
+        none: true,
+    },
+    shared_libs: ["libc", "libdl", "liblog", "libm", "libcutils", "libdrm", "libhardware", "liblog", "libnativewindow", "libsync", "libz"],
+//    check_elf_files: false,
+    vendor: true
+}
